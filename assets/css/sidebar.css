@@ -1,0 +1,98 @@
+/* BARRA LATERAL */
+   .sidebar {
+    width: 270px;
+    height: 100vh;
+    background-color: #1B2631;
+    opacity: 90%;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* LOGO Y TITULO*/
+.sidebar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.sidebar .logo img {
+    width: 125px;
+    height: 125px;
+    padding: 5px;
+    margin-top: 40px;
+}
+
+.sidebar .logo h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+/* MENÚ */
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu ul li {
+    margin-bottom: 10px;
+    
+}
+
+.sidebar .menu ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 16px;
+    padding: 20px;
+    background: #121e2b; 
+    transition: background 0.3s;
+    position: relative;
+}
+
+.sidebar .menu ul li a img {
+    width: 35px; 
+    height: 35px;
+    position: absolute;
+    left: 15px;
+}
+
+/* Hover y efecto de desplazamiento */
+.sidebar .menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.103);
+    padding-left: 15px;
+}
+
+/* BOTON DE CERRAR SESIÓN */
+.sidebar .logout {
+    margin-top: auto;
+}
+
+.sidebar .logout button {
+    width: 100%;
+    background: #121e2b; 
+    color: #ecf0f1;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.sidebar .logout button:hover {
+    background: rgba(255, 255, 255, 0.103);
+}

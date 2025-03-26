@@ -1,0 +1,90 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    background: white;
+    /* padding: 20px; */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Encabezado de la tabla */
+.table thead {
+    background: #1B2631;
+    color: white;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Alternar colores en filas */
+.table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+/* Botones de acción */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
+}
+
+.action-btn img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.action-btn:hover img {
+    transform: scale(1.2);
+}
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin: 20px;
+}
+
+.pagination button {
+    background: #1B2631;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.pagination span {
+    font-weight: bold;
+    margin: 0 10px;
+}

@@ -1,0 +1,42 @@
+/* Esta parte es para todas las vistas, son los estilos de la estructura, excepto la del login*/
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #2C3E50, #BDC3C7);
+    background-attachment: fixed; /* Fija el fondo */
+    height: 100vh; /* Asegura que el fondo cubra toda la pantaña */
+    display: flex;
+    overflow: hidden;
+}
+
+.container-right {
+    margin-left: 270px;
+    width: 85%;
+    height: 100vh;
+    padding: 20px;
+    overflow-y: auto;
+} 
+
+.up{
+    text-align: center;
+    top: 0;
+    overflow-y: auto;
+}
+
+.search {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    
+}
+
+.search1{
+    display: flex;
+    gap: 30px;
+}
