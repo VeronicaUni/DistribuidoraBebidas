@@ -6,7 +6,11 @@
 </head>
 
 <body>
-    <button class="btn <?= $color ?>"><?= $texto ?></button>
+    <button id="btn" class="btn <?= $color ?> action-btn" 
+        data-action= <?= $action ?> 
+        data-product='<?= isset($productData) ? json_encode($productData) : "{}" ?>'>
+        <?= $texto ?>
+    </button>
 </body>
 
 </html>
