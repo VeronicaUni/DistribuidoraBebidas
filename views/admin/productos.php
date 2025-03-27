@@ -41,6 +41,8 @@
                         <?php
                         $texto = "Registrar Producto";
                         $color = "btn-primary";
+                        $action= "create";
+                        $productData = "{}"; // Para indicar que es un nuevo producto
                         include '../components/button.php';
                         ?>
                     </div>
@@ -72,4 +74,8 @@
             </div>
         </div>
     </div>
+    <?php include '../components/modal.php'; ?>
+    <script src="../../assets/js/modal.js"></script>
 </body>
+
+</html>
