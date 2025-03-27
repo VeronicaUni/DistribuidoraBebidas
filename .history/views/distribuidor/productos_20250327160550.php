@@ -64,10 +64,7 @@
                     ["Aguardiente Caucano 1L", "Licor", 20, 45000, "Cauca"],
                 ];
                 // Definir acciones con imágenes
-                $actions = [
-                    'view' => '../../assets/images/Icon-Informacion.png',
-                    
-                ];
+                
                 include '../components/table.php';
                 ?>
             </div>

@@ -1,6 +1,6 @@
 <?php
 // Simulación de rol (esto vendría de la sesión de usuario en PHP)
-$rol = "distribuidor"; // Cambiar a "distribuidor" según el usuario logueado
+$rol = "administrador"; // Cambiar a "distribuidor" según el usuario logueado
 // Definir los elementos del menú según el rol
 $menuItems = [
     "administrador" => [

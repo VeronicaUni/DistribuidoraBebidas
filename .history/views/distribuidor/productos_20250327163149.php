@@ -2,10 +2,16 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="../../assets/css/styles.css?v=<?php echo time(); ?>">
-    <?php include '../partials/header.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Ventas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../../assets/css/styles.css?v=<?php echo time(); ?>">
+    <?php include '../partials/header.php'; ?>
 </head>
 
 <body>
@@ -18,8 +24,8 @@
         <!-- Encabezado con título -->
         <div class="up">
             <?php
-            $titulo = "Módulo de Pedidos";
-            $icono = "../../assets/images/Icon-Pedidos.png";
+            $titulo = "Módulo de Ventas";
+            $icono = "../../assets/images/Icon-Ventas.png"; // Asegúrate de tener este icono
             include '../components/title.php';
             ?>
         </div>
@@ -30,7 +36,7 @@
                 <div class="search1">
                     <div>
                         <?php
-                        $placeholder = "Buscar Código de Pedido...";
+                        $placeholder = "Buscar Código de Venta...";
                         include '../components/searchbar.php';
                         ?>
                     </div>
@@ -41,23 +47,23 @@
                         ?>
                     </div>
                     <div>
-                        <input type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha DD/MM/AAAA">
+                        <input type="date" class="form-control" id="fecha" name="fecha">
                     </div>
                 </div>
                 <div class="button">
                     <div>
                         <?php
-                        $texto = "Nuevo Pedido";
+                        $texto = "Nueva Venta";
                         $color = "btn-primary";
                         $action = "create";
-                        $pedidoData = "{}";
+                        $ventaData = "{}";
                         include '../components/button.php';
                         ?>
                     </div>
                 </div>
             </div>
             
-            <!-- Tabla de pedidos -->
+            <!-- Tabla de ventas -->
             <div>
                 <?php
                 $columnas = ["Cédula", "Nombre de distribuidor", "Producto Vendido", "Nombre de cliente", "Cantidad", "Fecha", "Acciones"];
@@ -69,7 +75,7 @@
                     ["1003456548", "José Eduardo Narváez", "Ron Medellín 750ml", "Ana María García", 8, "08/05/2025"]
                 ];
                 
-                // Definir acciones con íconos
+                // Definir acciones con íconos de Bootstrap
                 $actions = [
                     'edit' => '<i class="bi bi-pencil"></i>',
                     'delete' => '<i class="bi bi-trash"></i>',
@@ -83,23 +89,28 @@
     </div>
     
     <?php include '../components/modal.php'; ?>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/modal.js"></script>
     
-    <!-- Script para acciones de pedidos -->
+    <!-- Script para acciones -->
     <script>
+        // Función para manejar las acciones de los botones
         document.addEventListener('DOMContentLoaded', function() {
             // Botones de editar
             document.querySelectorAll('.btn-edit').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    alert('Función de editar pedido');
+                    alert('Función de editar venta');
                 });
             });
             
             // Botones de eliminar
             document.querySelectorAll('.btn-delete').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    if(confirm('¿Está seguro de eliminar este pedido?')) {
-                        alert('Pedido eliminado (simulación)');
+                    if(confirm('¿Está seguro de eliminar esta venta?')) {
+                        alert('Venta eliminada (simulación)');
+                        // En implementación real, aquí iría la lógica para eliminar
                     }
                 });
             });
@@ -107,7 +118,7 @@
             // Botones de ver
             document.querySelectorAll('.btn-view').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    alert('Mostrando detalles del pedido');
+                    alert('Mostrando detalles de la venta');
                 });
             });
         });

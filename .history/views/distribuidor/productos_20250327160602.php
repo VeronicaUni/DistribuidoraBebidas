@@ -66,7 +66,8 @@
                 // Definir acciones con imágenes
                 $actions = [
                     'view' => '../../assets/images/Icon-Informacion.png',
-                    
+                    'edit' => '../../assets/images/Icon-Actualizar.png',
+                    'delete' => '../../assets/images/Icon-Eliminar.png'
                 ];
                 include '../components/table.php';
                 ?>
