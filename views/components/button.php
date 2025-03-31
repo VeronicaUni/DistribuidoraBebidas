@@ -7,7 +7,8 @@
 
 <body>
     <button id="btn" class="btn <?= $color ?> action-btn" 
-        data-action= <?= $action ?> 
+        data-action="<?= isset($action) ? $action : '' ?>" 
+        data-module="<?= isset($module) ? $module : '' ?>"
         data-product='<?= isset($productData) ? json_encode($productData) : "{}" ?>'>
         <?= $texto ?>
     </button>

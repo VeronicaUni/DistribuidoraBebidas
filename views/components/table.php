@@ -45,8 +45,10 @@ $datosPagina = array_slice($datos, $start, $rowsPerPage);
                         <?php endforeach; ?>
                         <td>
                             <?php foreach ($actions as $action => $icon): ?>
-                                <button class="action-btn" data-action="<?= $action ?>"
-                                    data-product="<?= htmlspecialchars(json_encode($fila), ENT_QUOTES, 'UTF-8') ?>">
+                                <button class="action-btn"
+                                    data-action="<?= $action ?>"
+                                    data-product="<?= htmlspecialchars(json_encode($fila), ENT_QUOTES, 'UTF-8') ?>"
+                                    data-module="<?= isset($module) ? $module : '' ?>">
                                     <img src="<?= $icon ?>" alt="<?= $action ?>">
                                 </button>
                             <?php endforeach; ?>

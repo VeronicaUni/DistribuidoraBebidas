@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include '../partials/header.php'; ?>
+<?php include '../partials/header.php';
+ session_start();
+ $rol = null;
+
+if (isset($_SESSION['vError']) && $_SESSION['vError'] !== '') {
+    echo '<script>alert("' . $_SESSION['vError'] . '");</script>';
+    $_SESSION['vError'] = '';
+}
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +20,7 @@
 <body>
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
-        <form onsubmit="redirigir(event)">
+        <form action="loguear.php" method="POST">
             <div class="input-group">
                 <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" name="usuario" required>
