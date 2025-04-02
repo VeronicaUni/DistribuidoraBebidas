@@ -18,11 +18,11 @@ $nombreDistribuidor = $_GET['nombre'] ?? 'Desconocido';
     </div>
 
     <div class="container-right">
-        <!-- Título del módulo -->
+        <!-- ESTE ES UN COMPONENTE QUE SE CREO PARA TITULO, recuerden que la variable se coloca al principio y después se llama -->
         <div class="up">
             <?php
-            $titulo = "Módulo de Asignación de Productos";
-            $icono = "../../assets/images/Icon-AsignacionProductos.png";
+            $titulo = "Módulo de Distribuidores";
+            $icono = "../../assets/images/Icon-ClienteDistribuidor.png";
             include '../components/title.php';
             ?>
              <div class="subtitulo">Distribuidor: <?php echo htmlspecialchars($nombreDistribuidor); ?></div>
