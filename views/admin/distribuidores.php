@@ -67,7 +67,7 @@
                 ];
                 // Definir acciones con imágenes
                 $actions = [
-                    'view' => '../../assets/images/Icon-Informacion.png',
+                    'assign' => '../../assets/images/Icon-AsignacionProductos.png',
                     'edit' => '../../assets/images/Icon-Actualizar.png',
                     'delete' => '../../assets/images/Icon-Eliminar.png'
                 ];

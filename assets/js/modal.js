@@ -45,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 modalTitle.textContent = `Eliminar ${capitalizeFirstLetter(module)}`;
                 modalBody.innerHTML = generateDeleteContent(module, data);
                 break;
+            case "assign":  
+            window.location.href = `../../views/admin/asignacion.php?id=${data[0]}&nombre=${encodeURIComponent(data[1])}`; 
+                break;
     
             default:
                 modalTitle.textContent = "Acción no definida";

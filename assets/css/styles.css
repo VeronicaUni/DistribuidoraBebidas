@@ -86,3 +86,14 @@ body {
     border-radius: 5px;
     font-size: 14px;
 }
+.subtitulo {
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: #333;
+    margin-top: -10px;
+    display: inline-block;
+}
