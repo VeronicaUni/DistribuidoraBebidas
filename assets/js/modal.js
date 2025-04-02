@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <input type="number" placeholder="Ingrese el precio" />
                     <button class="btn-save">Registrar Venta</button>
                 `;
-            case "distributores":
+            case "distribuidores":
                 return `
                     <label>Nombre del Distribuidor:</label>
                     <input type="text" placeholder="Ingrese el nombre del distribuidor" />
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p><strong>Cantidad:</strong> ${data[2]}</p>
                     <p><strong>Precio:</strong> $${data[3]}</p>
                 `;
-            case "distributores":
+            case "distribuidores":
                 return `
                     <p><strong>Nombre:</strong> ${data[0]}</p>
                     <p><strong>Dirección:</strong> ${data[1]}</p>
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <input type="number" value="${data[3]}" />
                     <button class="btn-save">Guardar Venta</button>
                 `;
-            case "distributores":
+            case "distribuidores":
                 return `
                     <label>Nombre del Distribuidor:</label>
                     <input type="text" value="${data[0]}" />
