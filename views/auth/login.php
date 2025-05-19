@@ -23,13 +23,16 @@ if (isset($_SESSION['vError']) && $_SESSION['vError'] !== '') {
         <form action="loguear.php" method="POST">
             <div class="input-group">
                 <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" name="usuario" required>
+                <input type="text" id="usuario" name="usuario" placeholder="ingresa aqui tu usuario" required>
             </div>
             <div class="input-group">
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña"required>
             </div>
             <button type="submit" class="login-btn">Ingresar</button>
+            <div>
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
         </form>
     </div>
 </body>
