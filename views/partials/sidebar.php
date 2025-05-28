@@ -1,10 +1,14 @@
 <?php
-// Simulación de rol (esto vendría de la sesión de usuario en PHP)
-session_start();
-$rol = $_SESSION['rol']; 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Verificar si la sesión está activa
+$rol = isset($_SESSION['rol']) ? $_SESSION['rol'] : null;
+
 // Definir los elementos del menú según el rol
 $menuItems = [
-    "administrador" => [
+    "admin" => [
         ["href" => "../admin/productos.php", "img" => "../../assets/images/Icon-Productos.png", "alt" => "Productos", "text" => "Productos"],
         ["href" => "../admin/ventas.php", "img" => "../../assets/images/Icon-PedidoVentas.png", "alt" => "Ventas", "text" => "Ventas"],
         ["href" => "../admin/distribuidores.php", "img" => "../../assets/images/Icon-ClienteDistribuidor.png", "alt" => "Distribuidores", "text" => "Distribuidores"],
@@ -29,21 +33,27 @@ $menuItems = [
         <?php endif; ?>
         <h2>Distribución Express</h2>
     </div>
-    <!-- Esto evita el cache  ?v=<?php echo time(); ?> -->
+
+    <!-- Evitar cache del CSS -->
     <link rel="stylesheet" href="../../assets/css/sidebar.css?v=<?php echo time(); ?>">
 
-    <div class="menu">
-        <ul>
-            <?php foreach ($menuItems[$rol] as $item) : ?>
-                <li>
-                    <a href="<?= $item['href']; ?>">
-                        <img src="<?= $item['img']; ?>" alt="<?= $item['alt']; ?>">
-                        <?= $item['text']; ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
+    <!-- Menú según el rol -->
+    <?php if (isset($menuItems[$rol])): ?>
+        <div class="menu">
+            <ul>
+                <?php foreach ($menuItems[$rol] as $item) : ?>
+                    <li>
+                        <a href="<?= $item['href']; ?>">
+                            <img src="<?= $item['img']; ?>" alt="<?= $item['alt']; ?>">
+                            <?= $item['text']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php else: ?>
+        <p style="color: red; text-align: center; margin: 20px;">⚠️ Rol no autorizado</p>
+    <?php endif; ?>
 
     <!-- Botón de Cerrar Sesión -->
     <div class="logout">
@@ -52,8 +62,7 @@ $menuItems = [
 </aside>
 
 <script>
-    document.getElementById("logout-btn").addEventListener("click", function() {
-        
-        window.location.href = "../auth/logout.php"; // Asegúrate de que la ruta es correcta
+    document.getElementById("logout-btn").addEventListener("click", function () {
+        window.location.href = "../auth/logout.php";
     });
 </script>

@@ -1,16 +1,8 @@
 <?php
-session_start();
-$usuario = $_SESSION['usuario'];
+session_start();         // Iniciar sesión si no lo estaba
+session_unset();         // Eliminar todas las variables de sesión
+session_destroy();       // Destruir la sesión
 
-if (!isset($usuario)){
-header('location: ../../index.php');
-}else{
-
-session_start();
-
-session_destroy();
-
-header('location: ../../index.php');
+// Redirigir al login
+header("Location: login.php");
 exit();
-}
-?>

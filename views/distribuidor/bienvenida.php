@@ -1,3 +1,4 @@
+<?php require_once '../../config/proteccionDIST.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,8 +8,16 @@
     <script>
         function updateDateTime() {
             const now = new Date();
-            const date = now.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
-            const time = now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', hour12: false });
+            const date = now.toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const time = now.toLocaleTimeString('es-ES', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            });
             document.getElementById('date-time').innerHTML = `${date} ${time}`;
         }
         setInterval(updateDateTime, 1000);
@@ -21,12 +30,16 @@
 
     <!-- Contenido principal -->
     <div class="container-right">
-        <!-- Sección de bienvenida -->
         <div class="welcome-view">
             <div id="date-time" class="date-time-box"></div>
-            <h2 class="welcome-text">Bienvenido, usted se encuentra en el panel de control de Distribuidor</h2>
-            <div class="welcome-image">
-                <img src="../../assets/images/Image-Bienvenida.png" alt="Distribuidor">
+
+            <div class="welcome-container">
+                <h2 class="welcome-text">
+                    Bienvenido, usted se encuentra en el panel de control del Distribuidor
+                </h2>
+                <div class="welcome-image">
+                    <img src="../../assets/images/Image-Bienvenida.png" alt="Distribuidor">
+                </div>
             </div>
         </div>
     </div>

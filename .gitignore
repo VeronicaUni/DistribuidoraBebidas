@@ -1,0 +1,28 @@
+# Ignorar archivo con variables sensibles
+.env
+
+# Carpeta de dependencias generada por Composer
+/vendor/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales, logs y respaldos
+*.log
+*.tmp
+*.bak
+*.cache
+
+# Backups de base de datos
+*.sql
+
+# Archivos comprimidos o empaquetados
+*.zip
+*.rar

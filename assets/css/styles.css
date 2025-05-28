@@ -41,18 +41,17 @@ body {
 }
 
 /* Ahora, solo los estilos de la vista de bienvenida se aplican dentro de .welcome-view */
-.welcome-view .container-right {
-    margin-left: 270px;
-    width: calc(100% - 270px); /* Ajuste para ocupar el espacio restante */
-    height: 100vh;
-    padding: 20px;
-    overflow-y: auto;
-    display: flex; /* Asegurar que se centre el contenido */
+/* Ocupa toda la altura dentro del área derecha */
+.welcome-view {
+    display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%; /* usa 100%, ya que container-right ya tiene 100vh */
+    position: relative;
 }
 
-.welcome-view .welcome-container {
+/* Contenido centrado vertical y horizontal */
+.welcome-container {
     text-align: center;
     max-width: 600px;
     width: 100%;
@@ -62,21 +61,21 @@ body {
     justify-content: center;
 }
 
-.welcome-view .welcome-text {
+.welcome-text {
     color: white;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 35px;
+    font-weight: lighter;
     margin-bottom: 20px;
 }
 
-.welcome-view .welcome-image img {
-    width: 220px;
+.welcome-image img {
+    width: 300px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.welcome-view .date-time-box {
+.date-time-box {
     position: absolute;
     top: 20px;
     right: 20px;

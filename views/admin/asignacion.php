@@ -1,7 +1,9 @@
+<?php require_once '../../config/proteccionADMIN.php'; ?>
 <?php
 $idDistribuidor = $_GET['id'] ?? null;
 $nombreDistribuidor = $_GET['nombre'] ?? 'Desconocido';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
