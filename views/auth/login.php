@@ -18,6 +18,15 @@ if (isset($_SESSION['vError']) && $_SESSION['vError'] !== '') {
 </head>
 
 <body>
+    <!-- Burbujas de fondo -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
         <form action="loguear.php" method="POST">

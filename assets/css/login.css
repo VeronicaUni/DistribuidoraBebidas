@@ -7,8 +7,11 @@ body {
     height: 100vh;
     background: linear-gradient(to bottom, #2C3E50, #BDC3C7);
     margin: 0;
+    overflow: hidden; /* Para asegurarse de que las burbujas no se desborden */
+    position: relative; /* Necesario para posicionar las burbujas */
 }
 
+/* Contenedor del login */
 .login-container {
     background: white;
     padding: 20px;
@@ -16,13 +19,16 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 300px;
+    z-index: 10; /* Para asegurarse de que el formulario esté encima de las burbujas */
 }
 
+/* Título */
 h2 {
     margin-bottom: 20px;
     font-size: 22px;
 }
 
+/* Grupos de entrada */
 .input-group {
     display: flex;
     flex-direction: column;
@@ -31,11 +37,13 @@ h2 {
     padding: 10px;
 }
 
+/* Etiquetas de los campos de entrada */
 .input-group label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
+/* Estilo de los inputs */
 .input-group input {
     padding: 10px;
     border: 1px solid #ccc;
@@ -43,6 +51,7 @@ h2 {
     font-size: 16px;
 }
 
+/* Estilo del botón de login */
 .login-btn {
     background-color: #1B2631;
     color: white;
@@ -57,4 +66,70 @@ h2 {
 
 .login-btn:hover {
     background-color: #1A202C;
+}
+
+/* Burbuja estilo gaseosa */
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Empieza por debajo de la pantalla */
+    width: 80px; /* Tamaño más grande */
+    height: 80px; /* Tamaño más grande */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: bubble-rise 8s ease-in infinite; /* Hacemos la animación más lenta para que suban más despacio */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animación de las burbujas */
+@keyframes bubble-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-350px) scale(1.2); /* Suben más alto */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-700px) scale(0.8); /* Suben aún más alto */
+        opacity: 0;
+    }
+}
+
+/* Creación de varias burbujas */
+.bubble:nth-child(odd) {
+    animation-duration: 7s; /* Duración variable para un efecto natural */
+    animation-delay: 0s; /* Retraso aleatorio para crear variabilidad */
+}
+
+.bubble:nth-child(even) {
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+/* Burbujas adicionales */
+.bubble:nth-child(1) {
+    left: 20%;
+    animation-duration: 7.5s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+    left: 40%;
+    animation-duration: 6.5s;
+    animation-delay: 0.5s;
+}
+
+.bubble:nth-child(3) {
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(4) {
+    left: 80%;
+    animation-duration: 7.8s;
+    animation-delay: 0.8s;
 }
